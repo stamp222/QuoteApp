@@ -1,0 +1,13 @@
+page-quotes {
+    .auth{
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: right;
+        color: #ccc;
+
+        &:before {
+            content: '- ';
+        }
+    }
+}
