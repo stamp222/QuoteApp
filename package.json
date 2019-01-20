@@ -58,5 +58,9 @@
       "android",
       "browser"
     ]
+  },
+  "scripts": {
+  "postinstall": "npm run build && npm start",
+  "start": "nf start"
   }
 }
