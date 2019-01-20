@@ -58,9 +58,9 @@
       "android",
       "browser"
     ]
-  },
+  }, 
   "scripts": {
-  "postinstall": "bower install && grunt build",
-  "start": "nf start"
+	"postinstall": "npm run build",
+	"start": "node server.js"
   }
 }
