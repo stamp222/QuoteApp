@@ -5,7 +5,8 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "start": "ionic-app-scripts serve",
+    "postinstall": "bower install && grunt build",
+    "start": "nf start",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint"
@@ -58,9 +59,5 @@
       "android",
       "browser"
     ]
-  }, 
-  "scripts": {
-	"postinstall": "npm run build",
-	"start": "node server.js"
   }
 }
