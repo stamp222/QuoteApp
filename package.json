@@ -60,7 +60,7 @@
     ]
   },
   "scripts": {
-  "postinstall": "npm run build && npm start",
+  "postinstall": "bower install && grunt build",
   "start": "nf start"
   }
 }
