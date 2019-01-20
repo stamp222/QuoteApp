@@ -16,6 +16,8 @@ app.use(function(req, res, next) {
 });
  
 app.use(express.static('www'));
-app.listen(config.port, function () {
-  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
-});
+var server = app.listen(5000, function () {
+  var host = server.address().address
+  var port = server.address().port
+  console.log("Przykładowa aplikacja nasłuchuje na http://%s:%s", host, port)
+  })
