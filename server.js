@@ -3,6 +3,7 @@ var app      = express();
 var morgan = require('morgan');            
 var bodyParser = require('body-parser');    
 var cors = require('cors');
+var path = require('path');
  
 app.use(morgan('dev'));                                        
 app.use(bodyParser.urlencoded({'extended':'true'}));            
@@ -16,8 +17,8 @@ app.use(function(req, res, next) {
   next();
 });
  
-app.use(express.static('www'));
-var port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0", function() {
-console.log("Listening on Port 3000");
+app.use(express.static(__dirname + '/'));
+app.get('*', (req, res) =>{
+    res.sendFile(path.resolve(__dirname, './src/index.html'));
 });
+app.listen(process.env.PORT || 8080);
