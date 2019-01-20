@@ -6,7 +6,6 @@ import { QuotePage } from '../quote/quote';
 import { TabsPage } from '../tabs/tabs';
 import { SettingsService } from '../../services/settings';
 
-@IonicPage()
 @Component({
   selector: 'page-favorite',
   templateUrl: 'favorite.html',

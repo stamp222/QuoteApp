@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { Quote } from '../../data/quote.interface';
 import { QuotesService } from '../../services/quotes';
 
-@IonicPage()
 @Component({
   selector: 'page-quotes',
   templateUrl: 'quotes.html',
