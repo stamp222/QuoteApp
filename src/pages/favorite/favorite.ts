@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, MenuController, AlertController, Platform } from 'ionic-angular';
 import { QuotesService } from '../../services/quotes';
 import { Quote } from '../../data/quote.interface';
 import { QuotePage } from '../quote/quote';
@@ -12,14 +12,16 @@ import { SettingsService } from '../../services/settings';
 })
 export class FavoritePage {
   quotes: Quote[];
-  tabsPage = TabsPage
+  tabsPage = TabsPage;
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public quoteService: QuotesService,
      public mdlCtrl: ModalController,
      public menuCtrl: MenuController,
-     public settingsService: SettingsService) {
+     public settingsService: SettingsService,
+     private alertCtrl: AlertController,
+     private platform: Platform) {
   }
 
   ionViewDidLoad() {
@@ -54,5 +56,15 @@ export class FavoritePage {
   }
   isAltBackground() {
     return this.settingsService.isAltBackground();
+  }
+
+  showPlatform() {
+    let text = 'I run on: ' + this.platform.platforms();
+    let alert = this.alertCtrl.create({
+      title: 'My Home',
+      subTitle: text,
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 }
