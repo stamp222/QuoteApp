@@ -16,4 +16,6 @@ app.use(function(req, res, next) {
 });
  
 app.use(express.static('www'));
-app.listen(process.env.PORT || 5000);
+app.listen(config.port, function () {
+  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+});
